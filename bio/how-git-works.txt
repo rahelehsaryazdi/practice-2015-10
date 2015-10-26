@@ -6,4 +6,11 @@ To permanently save a version to History, use the command "git commit".
 
 Tag -m "Message" is used to record a message about a version. For example, this one will be: -m "Shit about GitHub that I remember 1".
 
-When I make changes, it will be: -m "Shit anout GitHub that I remember 2"
+When I make changes, it will be: -m "Shit about GitHub that I remember 2"
+
+
+***
+
+Adding further information.
+
+This will be titled "Shit about GitHub that I remember 2"
