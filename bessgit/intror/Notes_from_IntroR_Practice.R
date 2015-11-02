@@ -71,3 +71,17 @@ summary(airQuality)
 # if you have NA values (missing values) in your variables, it could fuck up some of your calculations. use na.rm=TRUE to exclude them.
 
 mean(airQuality$Ozone, na.rm=TRUE)
+# change name of variable:
+names(airQuality)[2] <- "Solar" # rename the second column's name
+head(airQuality)
+airQuality$Random <-rnorm(153, mean=1, sd=2) #rnorm creates a randomly numbers vector
+head(airQuality)
+rowThree <- airQuality[3,] # here we're subsetting an entire row as a vector (it'll be a data frame because it contains variables of different classes). It captures everthing in row 3, across all columns.
+# note that if we decided to just take one column, in which all data are of the same class, R will automatically assign it as a vector. For e.g.:
+colFour <- airQuality[,4]
+str(colFour)
+str(rowThree)
+
+# subset all datapoints with temperature greater than 80:
+
+highTemp <- airQuality[airQuality$Temp >80,]
