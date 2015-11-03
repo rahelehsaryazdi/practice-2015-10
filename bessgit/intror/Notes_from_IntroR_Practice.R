@@ -85,3 +85,28 @@ str(rowThree)
 # subset all datapoints with temperature greater than 80:
 
 highTemp <- airQuality[airQuality$Temp >80,]
+
+# pulling out all rows in which the month is equal to "May"
+May <- airQuality[airQuality$Month == "May",]
+head(May)
+may80 <- airQuality[airQuality$Month == "May" & airQuality$Temp >80,] 
+head(may80)
+mean(airQuality$Ozone, na.rm=T)
+colMeans(airQuality, na.rm=T)
+
+# get standard deviation
+
+lapply(airQuality, sd, na.rm=T)
+# lapply loops internally with C code, making the looping very fast. It takes two to three arguments: a list x (or another object that is coerced to a list); a function, including anonymous functions, which are user created without a name; other arguments as necessary. It will always return a list object
+
+
+
+sapply(airQuality, sd, na.rm=T)
+
+# making a function called "columnmean" for variable "y"
+y <- 1:12
+columnmean <- function(y, remove.NA=T){
+ nc <- ncol(y) 
+ means <- vector("numeric", length=0)
+ for(i in 1:nc) {means[i] <- mean(y, [,i], na.rm = remove.NA)
+ }
