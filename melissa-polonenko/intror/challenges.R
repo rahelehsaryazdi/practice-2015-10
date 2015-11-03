@@ -52,6 +52,27 @@ stats <- function(y,z){
   
 stats(mtCars$disp,mtCars$drat)  
 
+stats2 <- function(y,z){
+  print(mean(y))
+  print(sd(y))
+  print(median(z))
+}
+stats2(mtCars$disp,mtCars$drat)  
+
 
 # Challenge 6
 
+ranges <- lapply(mtCars, range)
+ranges2 <- sapply(mtCars, range)
+
+# both lapply and sapply give the ranges for every column; however, sapply simplifies the output into a more useable (visible) manner.
+
+# Challenge 7
+
+head(mtCars)
+specs <- mtCars[,c(1,6,7)]
+sums <- mapply(sum, specs)
+
+# Challenge 8
+
+maxes <- tapply(mtCars$hp, mtCars$gear, max)
